@@ -1,0 +1,298 @@
+{
+	"info": {
+		"_postman_id": "429798b3-8545-4926-90d6-81495415cf7e",
+		"name": "ExamAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50492129",
+		"_collection_link": "https://mr-dimitrov-3584004.postman.co/workspace/Martin-Dimitrov's-Workspace~1d43d5ab-c767-43d0-81b3-0945c7f9b404/collection/50492129-429798b3-8545-4926-90d6-81495415cf7e?action=share&source=collection_link&creator=50492129"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userName\": \"Kol3\",\r\n  \"firstName\": \"Kole\",\r\n  \"midName\": \"Poluchi\",\r\n  \"lastName\": \"Li\",\r\n  \"email\": \"Kol3@Poluchi.li\",\r\n  \"password\": \"poluchih33\",\r\n  \"rePassword\": \"poluchih33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/User/Register",
+							"protocol": "https",
+							"host": [
+								"d1dzr3dh7g0qgk",
+								"cloudfront",
+								"net"
+							],
+							"path": [
+								"api",
+								"User",
+								"Register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"email\": \"Kol3@Poluchi.li\",\r\n  \"password\": \"poluchih33\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/User/Authorization",
+							"protocol": "https",
+							"host": [
+								"d1dzr3dh7g0qgk",
+								"cloudfront",
+								"net"
+							],
+							"path": [
+								"api",
+								"User",
+								"Authorization"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "CreateTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"taskName\": \"TestTask\",\r\n  \"startDate\": \"25/01/2025 15:25\",\r\n  \"endDate\": \"26/01/2026 18:28\",\r\n  \"description\": \"Task description has 30 Task description has 30 charactersTask description has 30 charactersTask description has 30 characters\",\r\n  \"status\": \"ToDo\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/Task/Create",
+							"protocol": "https",
+							"host": [
+								"d1dzr3dh7g0qgk",
+								"cloudfront",
+								"net"
+							],
+							"path": [
+								"api",
+								"Task",
+								"Create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAll",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/Task/AllTasks",
+							"protocol": "https",
+							"host": [
+								"d1dzr3dh7g0qgk",
+								"cloudfront",
+								"net"
+							],
+							"path": [
+								"api",
+								"Task",
+								"AllTasks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CountALL",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/Task/Count",
+							"protocol": "https",
+							"host": [
+								"d1dzr3dh7g0qgk",
+								"cloudfront",
+								"net"
+							],
+							"path": [
+								"api",
+								"Task",
+								"Count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"taskName\": \"EditedByPostkole\",\r\n  \"startDate\": \"26/01/2028 17:28\",\r\n  \"endDate\": \"27/01/2029 19:28\",\r\n  \"description\": \"This description has been changed twice already ok kole poluchi li.\",\r\n  \"status\": \"InProgress\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/Task/Edit/b6b8e760-5915-46ee-b0cb-08de3adef70f",
+							"protocol": "https",
+							"host": [
+								"d1dzr3dh7g0qgk",
+								"cloudfront",
+								"net"
+							],
+							"path": [
+								"api",
+								"Task",
+								"Edit",
+								"b6b8e760-5915-46ee-b0cb-08de3adef70f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteTask",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://d1dzr3dh7g0qgk.cloudfront.net/api/Task/Delete/4bb93cc8-65db-4a03-b001-08de3adef70f",
+							"protocol": "https",
+							"host": [
+								"d1dzr3dh7g0qgk",
+								"cloudfront",
+								"net"
+							],
+							"path": [
+								"api",
+								"Task",
+								"Delete",
+								"4bb93cc8-65db-4a03-b001-08de3adef70f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
